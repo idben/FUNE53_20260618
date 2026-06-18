@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .box-outter {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: #d4d1d1;
+        }
+
+        .box-inner {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            width: 50px;
+            height: 50px;
+            background-color: #5b5252;
+        }
+    </style>
+    <title>事件參數 和 事件的傳遞</title>
+</head>
+
+<body>
+    <div class="box-outter">
+        <div class="box-inner">
+
+        </div>
+    </div>
+
+    <script>
+        // 事件泡泡
+        // 相同的事件註冊, 底層的觸發, 事件會向上傳遞, 上層的也會收到
+        document.querySelector(".box-outter").addEventListener(
+            "click",
+            (e) => {
+                console.log("點到了 outter");
+                console.log("outter", e.target);
+                console.log("outter", e.currentTarget);
+            }
+        );
+
+        document.querySelector(".box-inner").addEventListener(
+            "click",
+            (e) => {
+                // 停止事件傳遞
+                // e.stopPropagation();
+                console.log("點到了 inner");
+                console.log("inner", e.target);
+                console.log("inner", e.currentTarget);
+
+            }
+        );
+    </script>
+</body>
+
+</html>

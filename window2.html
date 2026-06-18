@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            height: 300vh;
+        }
+
+        .img {
+            position: fixed;
+            right: 10px;
+            bottom: -210px;
+            width: 50px;
+            height: 200px;
+            background-color: #d65151;
+            transition: all 0.2s;
+
+            &.active {
+                bottom: 0;
+            }
+        }
+    </style>
+    <title>取得捲軸座標</title>
+</head>
+
+<body>
+    <div class="img"></div>
+    <script>
+        const img = document.querySelector(".img");
+
+        window.addEventListener(
+            "scroll",
+            function () {
+                console.log(`${this.scrollX} , ${this.scrollY}`);
+                if (this.scrollY >= 382) return img.classList.add("active");
+                img.classList.remove("active");
+            }
+        )
+    </script>
+</body>
+
+</html>
