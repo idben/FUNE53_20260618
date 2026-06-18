@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陣列的操作</title>
+</head>
+
+<body>
+
+    <script>
+        Array.prototype.l = function () {
+            return this.length;
+        }
+
+        // new Arry 和 [] 兩個表現方式, 只有在填入一個數字的時候, 有不同的結果
+        const ary1 = new Array(3);
+        const ary2 = [3];
+
+        console.log(ary1);
+        console.log(ary2);
+        console.log(ary2.l());
+    </script>
+</body>
+
+</html>
