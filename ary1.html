@@ -21,6 +21,46 @@
         console.log(ary1);
         console.log(ary2);
         console.log(ary2.l());
+
+        const ary3 = [1, 2, 3, 4, 5];
+        const ary4 = [8, 9, 10]
+
+        // 往陣列的最後塞
+        ary3.push(6);
+        ary3.push(7);
+        ary3.push(...ary4); // ... : 攤平的意思
+
+        // 刪除陣列的最後一個, 並回傳
+        const v1 = ary3.pop();
+        const v2 = ary3.pop();
+        const v3 = ary3.pop();
+
+        // 刪除陣列的第一個, 並回傳
+        const v4 = ary3.shift();
+
+        // 往陣列的最前塞
+        ary3.unshift(v1)
+        ary3.unshift(v2, v3, v4)
+
+        console.log(ary3);
+
+        // 陣列組合
+        const ary5 = [1, 2, 3];
+        const ary6 = [4, 5, 6];
+        const ary7 = [7, 8, 9];
+        console.log(ary5.concat(ary6));
+        console.log(ary5.concat(ary6, ary7));
+        console.log([].concat(ary5)); // 陣列複製的一種
+
+        // 組合字串
+        console.log(ary5.toString());
+        console.log(ary5.join(""));
+        console.log(ary5.join(", "));
+
+
+
+
+
     </script>
 </body>
 
