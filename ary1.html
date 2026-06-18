@@ -68,6 +68,19 @@
         console.log(pokemons.slice(-4, -2));
         console.log(pokemons.slice(-2, -4)); // 取不到, 回傳空陣列
 
+        // splice
+        const pokemons2 = ["小火龍", "杰尼龜", "妙蛙種子", "新葉喵"];
+        const ary8 = ["木木梟", "火球鼠", "水水獺"];
+        // pokemons2.splice(); // 陣列複製的一種
+        // pokemons2.splice(2);
+        // pokemons2.splice(2, 1); // 常常在用的陣列刪除元素方法
+        // pokemons2.splice(2, 1, "木木梟", "火球鼠", "水水獺"); // 取代
+        // pokemons2.splice(2, 1, ...ary8); // 把指定陣列攤平並取代
+        pokemons2.splice(2, 0, ...ary8);
+
+        console.log(pokemons2);
+
+
 
 
 
