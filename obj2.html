@@ -41,9 +41,11 @@
 
         // 物件的解構賦值的別稱
         // 剩餘參數
-        const { acount: a2, id, ...passData } = data;
+        // 預設值寫法
+        const { acount: a2, id, date = "20260618", ...passData } = data;
         console.log(a2);
         console.log(passData);
+        console.log(date);
 
 
 
