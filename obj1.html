@@ -9,12 +9,20 @@
 
 <body>
 
+    <script src="./data.js"></script>
     <script>
         const obj1 = new Object();
         const obj2 = {
             name: "皮卡丘",
             sn: "026",
-            33: "123"
+            33: "123",
+            sound: "pikapika",
+            yelp: function () {
+                return this.sound;
+            },
+            yelp() {
+                return this.sound;
+            }
         }; // 官方推推 // const 定義物件陣列變數, 官方推推
 
         obj1.name = "皮卡丘"
@@ -22,6 +30,11 @@
         // 物件加中括號: 轉 key
         obj1["sn"] = "026";
         obj1["33"] = "123";
+        obj1.sound = "pi~~~~~ka";
+        obj1.yelp = function () {
+            return this.sound;
+        }
+
         for (let i = 0; i < 3; i++) {
             obj1["type" + (i + 1)] = i;
             obj2[`type${i + 1}`] = i;
@@ -30,6 +43,20 @@
         console.log(obj1);
         console.log(obj2);
         console.log(obj1 == obj2);
+        console.log(obj2.yelp());
+        console.log(obj1.yelp());
+
+        console.log(Object.keys(obj1));
+        console.log(Object.values(obj1));
+
+        console.log(JSON.stringify(obj1));
+        console.log(str1);
+        console.log(JSON.parse(str1));
+
+
+
+
+
     </script>
 </body>
 

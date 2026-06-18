@@ -1,0 +1,1 @@
+const str1 = '{"33":"123","name":"皮卡丘","sn":"026","sound":"pi~~~~~ka","type1":0,"type2":1,"type3":2}';
