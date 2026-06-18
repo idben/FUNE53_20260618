@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .active {
+            background-color: #7c7a7a;
+        }
+    </style>
+    <title>window 事件</title>
+</head>
+
+<body>
+
+    <script>
+        // window.addEventListener(
+        //     "resize",
+        //     function () {
+        //         console.log(`${this.innerWidth} ,${this.innerHeight}`);
+        //         if (this.innerWidth >= 1000) {
+        //             document.body.classList.add("active")
+        //         } else {
+        //             document.body.classList.remove("active")
+        //         }
+        //     }
+        // );
+
+        window.addEventListener(
+            "resize",
+            (event) => {
+                // 箭頭函數指向 window
+                // event: 事件參數
+                // event.target: 事件觸發的對象
+                // event.currentTarget: 事件註冊的對象
+                // 在箭頭函數中, 會用上面兩個語法來取得類似 this 的物件
+                console.log(`${event.target.innerWidth} ,${event.target.innerHeight}`);
+                if (event.target.innerWidth >= 1000) {
+                    document.body.classList.add("active")
+                } else {
+                    document.body.classList.remove("active")
+                }
+            }
+        );
+
+        // const aa = function(){}
+        // 箭頭函數
+        const aa = () => { }
+
+        // function aa() {
+
+        // }
+    </script>
+</body>
+
+</html>
