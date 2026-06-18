@@ -18,6 +18,10 @@
                 align-items: center;
                 font-family: sans-serif;
                 font-size: 20px;
+
+                &.hide {
+                    display: none;
+                }
             }
         }
     </style>
@@ -52,6 +56,25 @@
             return `${i + 1}. ${v.innerHTML}`;
         });
         console.log(ary1);
+
+        // filter
+        // 篩選
+        const ary2 = [...nodes].filter(function (node) {
+            return node.textContent.includes("火")
+        });
+        console.log(ary2);
+
+        // 組合用法
+        [...nodes].map(node => {
+            node.classList.add("hide")
+            return node;
+        }).filter(node => {
+            // return node.textContent.includes("火");
+            return node.textContent[0] == node.textContent[1];
+        }).forEach(node => {
+            node.classList.remove("hide");
+        });
+
 
     </script>
 </body>
