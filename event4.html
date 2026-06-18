@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .imgs {
+            position: relative;
+
+            img {
+                display: none;
+                position: absolute;
+                left: 0;
+                top: 0;
+
+                &.active {
+                    display: initial;
+                }
+            }
+        }
+    </style>
+    <title>下拉式選單事件</title>
+</head>
+
+<body>
+    <select name="select1" id="select1">
+        <option value="1">樣式1</option>
+        <option value="2">樣式2</option>
+        <option value="3">樣式3</option>
+        <option value="4">樣式4</option>
+    </select>
+    <div class="imgs">
+        <img class="active" src="https://picsum.photos/id/684/200/200" alt="">
+        <img src="https://picsum.photos/id/685/200/200" alt="">
+        <img src="https://picsum.photos/id/686/200/200" alt="">
+        <img src="https://picsum.photos/id/687/200/200" alt="">
+    </div>
+
+
+
+    <script>
+        const select1 = document.querySelector("#select1");
+        select1.addEventListener("change", function () {
+            console.log(this.value);
+            console.log(this.selectedOptions[0].textContent);
+            // 保護式寫法
+            document.querySelector(".active")?.classList.remove("active");
+            document.querySelectorAll(".imgs img")
+            [parseInt(this.value - 1)].classList.add("active");
+        });
+
+    </script>
+</body>
+
+</html>
