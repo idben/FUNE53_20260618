@@ -76,11 +76,17 @@
         });
 
 
+        // every / some
         const numbers = [33, 44, 9, 6, 15, 19, 27, 55];
         const result = numbers.every(age => age >= 18);
         console.log(result);
         const result2 = numbers.some(age => age >= 18);
         console.log(result2);
+
+        numbers.sort(); // 字典排序 自然排序
+        numbers.sort(function (a, b) { return a - b }); // 升冪
+        numbers.sort((a, b) => b - a); // 降冪
+        console.log(numbers);
 
 
 
