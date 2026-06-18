@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .imgs {
+            position: relative;
+            height: 200px;
+
+            img {
+                display: none;
+                position: absolute;
+                left: 0;
+                top: 0;
+
+                &.active {
+                    display: initial;
+                }
+            }
+        }
+    </style>
+    <title>單選選項的事件</title>
+</head>
+
+<body>
+    <!-- <input type="radio" name="q1" id="r1">
+    <label for="r1">樣式1</label> -->
+
+    <label>
+        <input type="radio" name="q1" id="r1" value="0"> 樣式1
+    </label>
+    <label>
+        <input type="radio" name="q1" id="r2" value="1"> 樣式2
+    </label>
+    <label>
+        <input type="radio" name="q1" id="r3" value="2" checked> 樣式3
+    </label>
+    <label>
+        <input type="radio" name="q1" id="r4" value="3"> 樣式4
+    </label>
+
+    <div class="imgs">
+        <img class="active" src="https://picsum.photos/id/684/200/200" alt="">
+        <img src="https://picsum.photos/id/685/200/200" alt="">
+        <img src="https://picsum.photos/id/686/200/200" alt="">
+        <img src="https://picsum.photos/id/687/200/200" alt="">
+    </div>
+
+    <button>檢查</button>
+
+
+
+    <script>
+        // 操作 UI 的寫法
+        const radio1 = document.querySelectorAll("input[type=radio][name=q1]");
+        for (let i = 0; i < radio1.length; i++) {
+            radio1[i].addEventListener("change", function () {
+                console.log(this.value);
+                console.log(this.parentElement.innerText.trim());
+
+                // 保護式寫法
+                document.querySelector(".active")?.classList.remove("active");
+                document.querySelectorAll(".imgs img")
+                [parseInt(this.value)].classList.add("active");
+            });
+        }
+
+        // 取得答案的寫法
+        document.querySelector("button").addEventListener(
+            "click",
+            function () {
+                const ans_q1 = document.querySelector("input[type=radio][name=q1]:checked")
+                console.log(ans_q1.value);
+
+            }
+        )
+
+
+    </script>
+</body>
+
+</html>
