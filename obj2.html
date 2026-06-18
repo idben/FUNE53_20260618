@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>物件的解構賦值</title>
+</head>
+
+<body>
+
+    <script src="./data2.js"></script>
+    <script>
+        console.log(results);
+        console.log(results[1]);
+        console.log(results[1].totals);
+        console.log(results[1].acount);
+        console.log(results[1].items);
+
+        // 傳統寫法
+        // const data = results[1];
+
+        // 陣列的解構賦值是指定一個空陣列,去對應既有存在的陣列
+        // 用索引值對應
+        const [, data] = results;
+        console.log(data);
+
+        // 傳統寫法
+        // const totals = data.totals;
+        // const acount = data.acount;
+        // const items = data.items;
+
+        // 物件的解構賦值的寫法
+        // 指定一個空物件, 去對應既有存在的物件
+        // 用 key 去對應
+        const { totals, acount, items } = data;
+
+        console.log(totals);
+        console.log(acount);
+        console.log(items);
+
+        // 物件的解構賦值的別稱
+        // 剩餘參數
+        const { acount: a2, id, ...passData } = data;
+        console.log(a2);
+        console.log(passData);
+
+
+
+
+
+    </script>
+</body>
+
+</html>
